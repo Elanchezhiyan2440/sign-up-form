@@ -1,5 +1,8 @@
 :root{
     --left-width:45vw;
+    --right-padding:0 0 0 6rem;
+    --primary-color:#347589;
+    --text-color:  #333;
 }
 
 html{
@@ -8,9 +11,62 @@ html{
     /* padding:0 15rem; */
 }
 
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+p{
+    margin-block-start: 0;
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 500;
+    padding: var(--right-padding);
+    line-height: normal;
+    color: var(--text-color);
+}
+
+form{
+    padding: var(--right-padding);
+    box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.25), 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+legend{
+    padding:4rem 1rem 1rem 0;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+input{
+    border-radius: 0.6rem;
+    border: 1px solid rgba(0, 0, 0, 0.30);
+    width: 25rem;
+    height: 3rem;
+    display: block;
+}
+
+span{
+    color:var(--primary-color);
+}
+
+label{
+    display: block;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
 .left{
     background: url(../images/left.jpg);
-    background-size: cover;
+    background-size: var(--left-width) 100%;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -48,8 +104,75 @@ html{
     font-size: 1.2rem;
 }
 
-#logo{
+.logo{
     margin: 0 3rem 0 0;
     width: 54px;
-    height: 64px;
+    height: 54px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - var(--left-width));
+}
+
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: flex-start;
+}
+
+#logoRight{
+    margin: 3rem 3rem 0 0;
+    align-self: flex-end;
+    display: inline;
+}
+
+.formRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.formField{
+    margin: 2rem 9rem 2rem 0;
+}
+
+input[type="password"]{
+    margin: 0 0rem 4rem 0;
+}
+
+input[type="submit"] {
+    margin: 2rem 0 0 6rem;
+    height: 5rem;
+    width: 15rem;
+    border-radius: 5rem;
+    font-size: 2.5rem;
+    color: white;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 254, 254, 0.40);
+    background: #347589;
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: 0.2s;
+}
+
+input[type="submit"]:hover{
+    background: #215464;
+}
+
+.logIn{
+    display: flex;
+    flex-direction: row;
+}
+
+.logIn>p{
+    font-size: 2rem;
+    padding:3.5rem 3.5rem 0 3.5rem;
+}
+
+#copyrights{
+    font-size: 1rem;
+    padding: 0;
+    margin-top: auto;
+    align-self: flex-end;
 }
